@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<workbook source-build="2024.1.0" source-platform="win" version="18.1">
+  <preferences />
+  <datasources>
+    <datasource caption="Policy Level" inline="true" name="federated.policy_level" source="textscan" version="18.1">
+      <connection catalog="" directory="../data/processed" filename="tableau_policy_level.csv" password="" server="" username="" workspace="">
+        <relation name="policy_level" table="tableau_policy_level.csv" type="table" />
+      </connection>
+      <column caption="IDpol" datatype="integer" name="[policy_level].[IDpol]" role="dimension" type="nominal" />
+      <column caption="ClaimNb" datatype="integer" name="[policy_level].[ClaimNb]" role="measure" type="quantitative" />
+      <column caption="Exposure" datatype="real" name="[policy_level].[Exposure]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="VehPower" datatype="integer" name="[policy_level].[VehPower]" role="measure" type="quantitative" />
+      <column caption="VehAge" datatype="integer" name="[policy_level].[VehAge]" role="measure" type="quantitative" />
+      <column caption="DrivAge" datatype="integer" name="[policy_level].[DrivAge]" role="measure" type="quantitative" />
+      <column caption="BonusMalus" datatype="integer" name="[policy_level].[BonusMalus]" role="measure" type="quantitative" />
+      <column caption="VehBrand" datatype="string" name="[policy_level].[VehBrand]" role="dimension" type="nominal" />
+      <column caption="VehGas" datatype="string" name="[policy_level].[VehGas]" role="dimension" type="nominal" />
+      <column caption="Area" datatype="string" name="[policy_level].[Area]" role="dimension" type="nominal" />
+      <column caption="Density" datatype="integer" name="[policy_level].[Density]" role="measure" type="quantitative" />
+      <column caption="Region" datatype="string" name="[policy_level].[Region]" role="dimension" type="nominal" />
+      <column caption="TotalClaimCost" datatype="real" name="[policy_level].[TotalClaimCost]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="MaxClaimAmount" datatype="real" name="[policy_level].[MaxClaimAmount]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="MeanClaimAmount" datatype="real" name="[policy_level].[MeanClaimAmount]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="DrivAgeGroup" datatype="string" name="[policy_level].[DrivAgeGroup]" role="dimension" type="nominal" />
+      <column caption="VehAgeGroup" datatype="string" name="[policy_level].[VehAgeGroup]" role="dimension" type="nominal" />
+      <column caption="VehPowerGroup" datatype="string" name="[policy_level].[VehPowerGroup]" role="dimension" type="nominal" />
+      <column caption="BonusMalusCat" datatype="string" name="[policy_level].[BonusMalusCat]" role="dimension" type="nominal" />
+      <column caption="DensityGroup" datatype="string" name="[policy_level].[DensityGroup]" role="dimension" type="nominal" />
+    </datasource>
+    <datasource caption="Regional KPI" inline="true" name="federated.regional_kpi" source="textscan" version="18.1">
+      <connection catalog="" directory="../data/processed" filename="tableau_regional_kpi.csv" password="" server="" username="" workspace="">
+        <relation name="regional_kpi" table="tableau_regional_kpi.csv" type="table" />
+      </connection>
+      <column caption="Region" datatype="string" name="[regional_kpi].[Region]" role="dimension" type="nominal" />
+      <column caption="PolicyCount" datatype="integer" name="[regional_kpi].[PolicyCount]" role="measure" type="quantitative" />
+      <column caption="TotalExposure" datatype="real" name="[regional_kpi].[TotalExposure]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="TotalClaims" datatype="integer" name="[regional_kpi].[TotalClaims]" role="measure" type="quantitative" />
+      <column caption="ClaimFrequency" datatype="real" name="[regional_kpi].[ClaimFrequency]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="TotalClaimCost" datatype="real" name="[regional_kpi].[TotalClaimCost]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="AvgSeverity" datatype="real" name="[regional_kpi].[AvgSeverity]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="CostPerExposure" datatype="real" name="[regional_kpi].[CostPerExposure]" role="measure" type="quantitative" format="$#,##0.00" />
+    </datasource>
+    <datasource caption="Segment Analysis" inline="true" name="federated.segment_analysis" source="textscan" version="18.1">
+      <connection catalog="" directory="../data/processed" filename="tableau_segment_analysis.csv" password="" server="" username="" workspace="">
+        <relation name="segment_analysis" table="tableau_segment_analysis.csv" type="table" />
+      </connection>
+      <column caption="Segment" datatype="string" name="[segment_analysis].[Segment]" role="dimension" type="nominal" />
+      <column caption="PolicyCount" datatype="integer" name="[segment_analysis].[PolicyCount]" role="measure" type="quantitative" />
+      <column caption="TotalExposure" datatype="real" name="[segment_analysis].[TotalExposure]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="TotalClaims" datatype="integer" name="[segment_analysis].[TotalClaims]" role="measure" type="quantitative" />
+      <column caption="TotalClaimCost" datatype="real" name="[segment_analysis].[TotalClaimCost]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="PoliciesWithClaims" datatype="integer" name="[segment_analysis].[PoliciesWithClaims]" role="measure" type="quantitative" />
+      <column caption="ClaimFrequency" datatype="real" name="[segment_analysis].[ClaimFrequency]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="AvgSeverity" datatype="real" name="[segment_analysis].[AvgSeverity]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="CostPerExposure" datatype="real" name="[segment_analysis].[CostPerExposure]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="SegmentType" datatype="string" name="[segment_analysis].[SegmentType]" role="dimension" type="nominal" />
+    </datasource>
+    <datasource caption="Individual Claims" inline="true" name="federated.individual_claims" source="textscan" version="18.1">
+      <connection catalog="" directory="../data/processed" filename="tableau_individual_claims.csv" password="" server="" username="" workspace="">
+        <relation name="individual_claims" table="tableau_individual_claims.csv" type="table" />
+      </connection>
+      <column caption="IDpol" datatype="integer" name="[individual_claims].[IDpol]" role="dimension" type="nominal" />
+      <column caption="ClaimAmount" datatype="real" name="[individual_claims].[ClaimAmount]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="CumCost" datatype="real" name="[individual_claims].[CumCost]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="CumCostPct" datatype="real" name="[individual_claims].[CumCostPct]" role="measure" type="quantitative" format="$#,##0.00" />
+      <column caption="ClaimRank" datatype="integer" name="[individual_claims].[ClaimRank]" role="measure" type="quantitative" />
+      <column caption="ClaimRankPct" datatype="real" name="[individual_claims].[ClaimRankPct]" role="measure" type="quantitative" format="$#,##0.00" />
+    </datasource>
+    <datasource caption="Portfolio KPI" inline="true" name="federated.portfolio_kpi" source="textscan" version="18.1">
+      <connection catalog="" directory="../data/processed" filename="tableau_portfolio_kpi.csv" password="" server="" username="" workspace="">
+        <relation name="portfolio_kpi" table="tableau_portfolio_kpi.csv" type="table" />
+      </connection>
+      <column caption="KPI" datatype="string" name="[portfolio_kpi].[KPI]" role="dimension" type="nominal" />
+      <column caption="Value" datatype="real" name="[portfolio_kpi].[Value]" role="measure" type="quantitative" format="$#,##0.00" />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="KPI_Cards">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="KPI_Cards">
+        <datasources>
+          <datasource caption="Portfolio KPI" name="federated.portfolio_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Portfolio KPI" name="federated.portfolio_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[portfolio_kpi].[KPI]" caption="KPI" datatype="string" />
+        <field name="[portfolio_kpi].[Value]" caption="Value" datatype="real" />
+      </field-info>
+      <mark class="text">
+        <encoding field="[portfolio_kpi].[SUM(Value)]" type="quantitative" />
+        <encoding field="[portfolio_kpi].[KPI]" type="nominal" />
+        <encoding field="[portfolio_kpi].[Value]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[portfolio_kpi].[KPI]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[portfolio_kpi].[Value]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[portfolio_kpi].[KPI]" />
+        <field field="[portfolio_kpi].[Value]" />
+      </pane>
+      <sort>
+        <sort field="[portfolio_kpi].[KPI]" direction="asc" />
+      </sort>
+      <style>
+        <style-rule element="cell"><field field="[portfolio_kpi].[Value]" /><format /><numfmt type="$#,##0" /></style-rule>
+        <style-rule element="cell"><style><font><size>14</size></font></style></style-rule>
+        <style-rule element="cell"><style><font><bold>true</bold></font></style></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Regional_Frequency_Bar">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Regional_Frequency_Bar">
+        <datasources>
+          <datasource caption="Regional KPI" name="federated.regional_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Regional KPI" name="federated.regional_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[regional_kpi].[Region]" caption="Region" datatype="string" />
+        <field name="[regional_kpi].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[regional_kpi].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[regional_kpi].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[regional_kpi].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[regional_kpi].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[regional_kpi].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[regional_kpi].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[PolicyCount]" type="quantitative" />
+        <encoding field="[regional_kpi].[TotalExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[regional_kpi].[Region]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[regional_kpi].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[regional_kpi].[Region]" />
+        <field field="[regional_kpi].[ClaimFrequency]" />
+      </pane>
+      <sort>
+        <sort field="[regional_kpi].[ClaimFrequency]" direction="desc" />
+      </sort>
+      <reference-lines>
+        <reference-line class="constant" field="[regional_kpi].[ClaimFrequency]" value="0.1007" label="Portfolio Avg" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[regional_kpi].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Regional_CostPerExposure_Bar">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Regional_CostPerExposure_Bar">
+        <datasources>
+          <datasource caption="Regional KPI" name="federated.regional_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Regional KPI" name="federated.regional_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[regional_kpi].[Region]" caption="Region" datatype="string" />
+        <field name="[regional_kpi].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[regional_kpi].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[regional_kpi].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[regional_kpi].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[regional_kpi].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[regional_kpi].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[regional_kpi].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+        <encoding field="[regional_kpi].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[regional_kpi].[AvgSeverity]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[regional_kpi].[Region]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[regional_kpi].[CostPerExposure]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[regional_kpi].[Region]" />
+        <field field="[regional_kpi].[CostPerExposure]" />
+      </pane>
+      <sort>
+        <sort field="[regional_kpi].[CostPerExposure]" direction="desc" />
+      </sort>
+      <reference-lines>
+        <reference-line class="constant" field="[regional_kpi].[CostPerExposure]" value="167" label="Portfolio Avg" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[regional_kpi].[CostPerExposure]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Highlight_Table">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Highlight_Table">
+        <datasources>
+          <datasource caption="Regional KPI" name="federated.regional_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Regional KPI" name="federated.regional_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[regional_kpi].[Region]" caption="Region" datatype="string" />
+        <field name="[regional_kpi].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[regional_kpi].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[regional_kpi].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[regional_kpi].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[regional_kpi].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[regional_kpi].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[regional_kpi].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+      </field-info>
+      <mark class="text">
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[AvgSeverity]" type="quantitative" />
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[regional_kpi].[Region]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[regional_kpi].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+        <field field="[regional_kpi].[AvgSeverity]" type="measure"><aggregation>SUM</aggregation></field>
+        <field field="[regional_kpi].[CostPerExposure]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[regional_kpi].[Region]" />
+        <field field="[regional_kpi].[ClaimFrequency]" />
+        <field field="[regional_kpi].[AvgSeverity]" />
+        <field field="[regional_kpi].[CostPerExposure]" />
+      </pane>
+      <sort>
+        <sort field="[regional_kpi].[ClaimFrequency]" direction="desc" />
+      </sort>
+      <style>
+        <style-rule element="cell"><field field="[regional_kpi].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+        <style-rule element="cell"><field field="[regional_kpi].[AvgSeverity]" /><format /><numfmt type="$#,##0" /></style-rule>
+        <style-rule element="cell"><field field="[regional_kpi].[CostPerExposure]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Driver_Age_Frequency">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Driver_Age_Frequency">
+        <datasources>
+          <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+      </datasources>
+      <field-info>
+        <field name="[segment_analysis].[Segment]" caption="Segment" datatype="string" />
+        <field name="[segment_analysis].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[segment_analysis].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[segment_analysis].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[segment_analysis].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[segment_analysis].[PoliciesWithClaims]" caption="PoliciesWithClaims" datatype="integer" />
+        <field name="[segment_analysis].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[segment_analysis].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[segment_analysis].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+        <field name="[segment_analysis].[SegmentType]" caption="SegmentType" datatype="string" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[PolicyCount]" type="quantitative" />
+        <encoding field="[segment_analysis].[TotalExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[segment_analysis].[Segment]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[segment_analysis].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[segment_analysis].[Segment]" />
+        <field field="[segment_analysis].[ClaimFrequency]" />
+      </pane>
+      <filters>
+        <filter class="categorical" column="[segment_analysis].[SegmentType]" value="DrivAgeGroup" />
+      </filters>
+      <sort>
+        <sort field="[segment_analysis].[Segment]" direction="asc" />
+      </sort>
+      <reference-lines>
+        <reference-line class="constant" field="[segment_analysis].[ClaimFrequency]" value="0.1007" label="Portfolio Avg" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[segment_analysis].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Driver_Age_Severity">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Driver_Age_Severity">
+        <datasources>
+          <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+      </datasources>
+      <field-info>
+        <field name="[segment_analysis].[Segment]" caption="Segment" datatype="string" />
+        <field name="[segment_analysis].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[segment_analysis].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[segment_analysis].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[segment_analysis].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[segment_analysis].[PoliciesWithClaims]" caption="PoliciesWithClaims" datatype="integer" />
+        <field name="[segment_analysis].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[segment_analysis].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[segment_analysis].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+        <field name="[segment_analysis].[SegmentType]" caption="SegmentType" datatype="string" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[segment_analysis].[PoliciesWithClaims]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[segment_analysis].[Segment]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[segment_analysis].[AvgSeverity]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[segment_analysis].[Segment]" />
+        <field field="[segment_analysis].[AvgSeverity]" />
+      </pane>
+      <filters>
+        <filter class="categorical" column="[segment_analysis].[SegmentType]" value="DrivAgeGroup" />
+      </filters>
+      <sort>
+        <sort field="[segment_analysis].[Segment]" direction="asc" />
+      </sort>
+      <style>
+        <style-rule element="cell"><field field="[segment_analysis].[AvgSeverity]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Vehicle_Age_Frequency">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Vehicle_Age_Frequency">
+        <datasources>
+          <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+      </datasources>
+      <field-info>
+        <field name="[segment_analysis].[Segment]" caption="Segment" datatype="string" />
+        <field name="[segment_analysis].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[segment_analysis].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[segment_analysis].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[segment_analysis].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[segment_analysis].[PoliciesWithClaims]" caption="PoliciesWithClaims" datatype="integer" />
+        <field name="[segment_analysis].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[segment_analysis].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[segment_analysis].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+        <field name="[segment_analysis].[SegmentType]" caption="SegmentType" datatype="string" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[PolicyCount]" type="quantitative" />
+        <encoding field="[segment_analysis].[TotalExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[segment_analysis].[Segment]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[segment_analysis].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[segment_analysis].[Segment]" />
+        <field field="[segment_analysis].[ClaimFrequency]" />
+      </pane>
+      <filters>
+        <filter class="categorical" column="[segment_analysis].[SegmentType]" value="VehAgeGroup" />
+      </filters>
+      <sort>
+        <sort field="[segment_analysis].[Segment]" direction="asc" />
+      </sort>
+      <reference-lines>
+        <reference-line class="constant" field="[segment_analysis].[ClaimFrequency]" value="0.1007" label="Portfolio Avg" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[segment_analysis].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Vehicle_Age_Severity">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Vehicle_Age_Severity">
+        <datasources>
+          <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+      </datasources>
+      <field-info>
+        <field name="[segment_analysis].[Segment]" caption="Segment" datatype="string" />
+        <field name="[segment_analysis].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[segment_analysis].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[segment_analysis].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[segment_analysis].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[segment_analysis].[PoliciesWithClaims]" caption="PoliciesWithClaims" datatype="integer" />
+        <field name="[segment_analysis].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[segment_analysis].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[segment_analysis].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+        <field name="[segment_analysis].[SegmentType]" caption="SegmentType" datatype="string" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[segment_analysis].[PoliciesWithClaims]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[segment_analysis].[Segment]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[segment_analysis].[AvgSeverity]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[segment_analysis].[Segment]" />
+        <field field="[segment_analysis].[AvgSeverity]" />
+      </pane>
+      <filters>
+        <filter class="categorical" column="[segment_analysis].[SegmentType]" value="VehAgeGroup" />
+      </filters>
+      <sort>
+        <sort field="[segment_analysis].[Segment]" direction="asc" />
+      </sort>
+      <style>
+        <style-rule element="cell"><field field="[segment_analysis].[AvgSeverity]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Freq_vs_Severity_Scatter">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Freq_vs_Severity_Scatter">
+        <datasources>
+          <datasource caption="Regional KPI" name="federated.regional_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Regional KPI" name="federated.regional_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[regional_kpi].[Region]" caption="Region" datatype="string" />
+        <field name="[regional_kpi].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[regional_kpi].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[regional_kpi].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[regional_kpi].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[regional_kpi].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[regional_kpi].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[regional_kpi].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+      </field-info>
+      <mark class="circle">
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[PolicyCount]" type="quantitative" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[regional_kpi].[AvgSeverity]" type="quantitative" />
+        <encoding field="[regional_kpi].[PolicyCount]" type="quantitative" />
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[regional_kpi].[AvgSeverity]" type="measure"><aggregation>SUM</aggregation></field>
+      </rows>
+      <cols>
+        <field field="[regional_kpi].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[regional_kpi].[AvgSeverity]" />
+        <field field="[regional_kpi].[ClaimFrequency]" />
+      </pane>
+      <reference-lines>
+        <reference-line class="constant" field="[regional_kpi].[ClaimFrequency]" value="0.1007" label="Avg Freq" />
+        <reference-line class="constant" field="[regional_kpi].[AvgSeverity]" value="2249" label="Avg Sev" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[regional_kpi].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+        <style-rule element="cell"><field field="[regional_kpi].[AvgSeverity]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Segment_Freq_vs_Sev">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Segment_Freq_vs_Sev">
+        <datasources>
+          <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Segment Analysis" name="federated.segment_analysis" />
+      </datasources>
+      <field-info>
+        <field name="[segment_analysis].[Segment]" caption="Segment" datatype="string" />
+        <field name="[segment_analysis].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[segment_analysis].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[segment_analysis].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[segment_analysis].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[segment_analysis].[PoliciesWithClaims]" caption="PoliciesWithClaims" datatype="integer" />
+        <field name="[segment_analysis].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[segment_analysis].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[segment_analysis].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+        <field name="[segment_analysis].[SegmentType]" caption="SegmentType" datatype="string" />
+      </field-info>
+      <mark class="circle">
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[SegmentType]" type="nominal" />
+        <encoding field="[segment_analysis].[PolicyCount]" type="quantitative" />
+        <encoding field="[segment_analysis].[SegmentType]" type="nominal" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[Segment]" type="nominal" />
+        <encoding field="[segment_analysis].[SegmentType]" type="nominal" />
+        <encoding field="[segment_analysis].[ClaimFrequency]" type="quantitative" />
+        <encoding field="[segment_analysis].[AvgSeverity]" type="quantitative" />
+        <encoding field="[segment_analysis].[PolicyCount]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[segment_analysis].[AvgSeverity]" type="measure"><aggregation>SUM</aggregation></field>
+      </rows>
+      <cols>
+        <field field="[segment_analysis].[ClaimFrequency]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[segment_analysis].[AvgSeverity]" />
+        <field field="[segment_analysis].[ClaimFrequency]" />
+      </pane>
+      <reference-lines>
+        <reference-line class="constant" field="[segment_analysis].[ClaimFrequency]" value="0.1007" label="Avg Freq" />
+        <reference-line class="constant" field="[segment_analysis].[AvgSeverity]" value="2249" label="Avg Sev" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[segment_analysis].[ClaimFrequency]" /><format /><numfmt type="0.0000" /></style-rule>
+        <style-rule element="cell"><field field="[segment_analysis].[AvgSeverity]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Pareto_Chart">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Pareto_Chart">
+        <datasources>
+          <datasource caption="Individual Claims" name="federated.individual_claims" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Individual Claims" name="federated.individual_claims" />
+      </datasources>
+      <field-info>
+        <field name="[individual_claims].[IDpol]" caption="IDpol" datatype="integer" />
+        <field name="[individual_claims].[ClaimAmount]" caption="ClaimAmount" datatype="real" />
+        <field name="[individual_claims].[CumCost]" caption="CumCost" datatype="real" />
+        <field name="[individual_claims].[CumCostPct]" caption="CumCostPct" datatype="real" />
+        <field name="[individual_claims].[ClaimRank]" caption="ClaimRank" datatype="integer" />
+        <field name="[individual_claims].[ClaimRankPct]" caption="ClaimRankPct" datatype="real" />
+      </field-info>
+      <mark class="bar">
+        <encoding type="color"><color><color></color></color></encoding>
+        <encoding field="[individual_claims].[CumCostPct]" type="quantitative" />
+        <encoding field="[individual_claims].[ClaimRankPct]" type="quantitative" />
+        <encoding field="[individual_claims].[CumCostPct]" type="quantitative" />
+        <encoding field="[individual_claims].[CumCost]" type="quantitative" />
+        <encoding field="[individual_claims].[ClaimAmount]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[individual_claims].[ClaimAmount]" type="measure"><aggregation>SUM</aggregation></field>
+        <field field="[individual_claims].[CumCostPct]" type="measure"><aggregation>SUM</aggregation></field>
+      </rows>
+      <cols>
+        <field field="[individual_claims].[ClaimRankPct]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[individual_claims].[ClaimAmount]" />
+        <field field="[individual_claims].[CumCostPct]" />
+        <field field="[individual_claims].[ClaimRankPct]" />
+      </pane>
+      <sort>
+        <sort field="[individual_claims].[ClaimRankPct]" direction="asc" />
+      </sort>
+      <reference-lines>
+        <reference-line class="constant" field="[individual_claims].[CumCostPct]" value="80" label="80% Cost" />
+      </reference-lines>
+      <style>
+        <style-rule element="cell"><field field="[individual_claims].[CumCostPct]" /><format /><numfmt type="0.0" /></style-rule>
+        <style-rule element="cell"><field field="[individual_claims].[ClaimRankPct]" /><format /><numfmt type="0.0" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Top_Claims_Table">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Top_Claims_Table">
+        <datasources>
+          <datasource caption="Individual Claims" name="federated.individual_claims" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Individual Claims" name="federated.individual_claims" />
+      </datasources>
+      <field-info>
+        <field name="[individual_claims].[IDpol]" caption="IDpol" datatype="integer" />
+        <field name="[individual_claims].[ClaimAmount]" caption="ClaimAmount" datatype="real" />
+        <field name="[individual_claims].[CumCost]" caption="CumCost" datatype="real" />
+        <field name="[individual_claims].[CumCostPct]" caption="CumCostPct" datatype="real" />
+        <field name="[individual_claims].[ClaimRank]" caption="ClaimRank" datatype="integer" />
+        <field name="[individual_claims].[ClaimRankPct]" caption="ClaimRankPct" datatype="real" />
+      </field-info>
+      <mark class="text">
+        <encoding field="[individual_claims].[ClaimAmount]" type="quantitative" />
+        <encoding field="[individual_claims].[IDpol]" type="nominal" />
+        <encoding field="[individual_claims].[ClaimAmount]" type="quantitative" />
+        <encoding field="[individual_claims].[CumCost]" type="quantitative" />
+        <encoding field="[individual_claims].[CumCostPct]" type="quantitative" />
+        <encoding field="[individual_claims].[ClaimRank]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[individual_claims].[IDpol]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[individual_claims].[ClaimAmount]" type="measure"><aggregation>SUM</aggregation></field>
+        <field field="[individual_claims].[CumCostPct]" type="measure"><aggregation>SUM</aggregation></field>
+        <field field="[individual_claims].[ClaimRank]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[individual_claims].[IDpol]" />
+        <field field="[individual_claims].[ClaimAmount]" />
+        <field field="[individual_claims].[CumCostPct]" />
+        <field field="[individual_claims].[ClaimRank]" />
+      </pane>
+      <sort>
+        <sort field="[individual_claims].[ClaimAmount]" direction="desc" />
+      </sort>
+      <top-n count="20" />
+      <style>
+        <style-rule element="cell"><field field="[individual_claims].[ClaimAmount]" /><format /><numfmt type="$#,##0" /></style-rule>
+        <style-rule element="cell"><field field="[individual_claims].[CumCostPct]" /><format /><numfmt type="0.0%" /></style-rule>
+      </style>
+    </worksheet>
+    <worksheet name="Cost_Distribution_Region">
+      <view alignment="top" class="viewsheet" enable-summary="true" name="Cost_Distribution_Region">
+        <datasources>
+          <datasource caption="Regional KPI" name="federated.regional_kpi" />
+        </datasources>
+      </view>
+      <datasources>
+        <datasource caption="Regional KPI" name="federated.regional_kpi" />
+      </datasources>
+      <field-info>
+        <field name="[regional_kpi].[Region]" caption="Region" datatype="string" />
+        <field name="[regional_kpi].[PolicyCount]" caption="PolicyCount" datatype="integer" />
+        <field name="[regional_kpi].[TotalExposure]" caption="TotalExposure" datatype="real" />
+        <field name="[regional_kpi].[TotalClaims]" caption="TotalClaims" datatype="integer" />
+        <field name="[regional_kpi].[ClaimFrequency]" caption="ClaimFrequency" datatype="real" />
+        <field name="[regional_kpi].[TotalClaimCost]" caption="TotalClaimCost" datatype="real" />
+        <field name="[regional_kpi].[AvgSeverity]" caption="AvgSeverity" datatype="real" />
+        <field name="[regional_kpi].[CostPerExposure]" caption="CostPerExposure" datatype="real" />
+      </field-info>
+      <mark class="bar">
+        <encoding field="[regional_kpi].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[regional_kpi].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[regional_kpi].[Region]" type="nominal" />
+        <encoding field="[regional_kpi].[TotalClaimCost]" type="quantitative" />
+        <encoding field="[regional_kpi].[AvgSeverity]" type="quantitative" />
+        <encoding field="[regional_kpi].[CostPerExposure]" type="quantitative" />
+      </mark>
+      <rows>
+        <field field="[regional_kpi].[Region]" type="dimension" />
+      </rows>
+      <cols>
+        <field field="[regional_kpi].[TotalClaimCost]" type="measure"><aggregation>SUM</aggregation></field>
+      </cols>
+      <pane>
+        <field field="[regional_kpi].[Region]" />
+        <field field="[regional_kpi].[TotalClaimCost]" />
+      </pane>
+      <sort>
+        <sort field="[regional_kpi].[TotalClaimCost]" direction="desc" />
+      </sort>
+      <style>
+        <style-rule element="cell"><field field="[regional_kpi].[TotalClaimCost]" /><format /><numfmt type="$#,##0" /></style-rule>
+      </style>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Page 1 - Executive Portfolio Overview">
+      <size maxheight="900" maxwidth="1200" minheight="900" minwidth="1200" />
+      <zone h="50" id="1" is-spatial-root="true" r="1200" x="0" y="0" w="1200">
+        <text val="INSURANCE CLAIMS &amp; PORTFOLIO RISK DASHBOARD  --  French Motor Third-Party Liability (freMTPL2)" />
+      </zone>
+      <zone h="100" id="2" is-spatial-root="true" r="1200" x="0" y="50" w="1200">
+        <worksheet name="KPI_Cards" />
+      </zone>
+      <zone h="350" id="3" is-spatial-root="true" r="600" x="0" y="150" w="600">
+        <worksheet name="Regional_Frequency_Bar" />
+      </zone>
+      <zone h="350" id="4" is-spatial-root="true" r="1200" x="600" y="150" w="600">
+        <worksheet name="Regional_CostPerExposure_Bar" />
+      </zone>
+      <zone h="200" id="5" is-spatial-root="true" r="1200" x="0" y="500" w="1200">
+        <worksheet name="Highlight_Table" />
+      </zone>
+      <zone h="200" id="6" is-spatial-root="true" r="400" x="0" y="700" w="400">
+        <filter column="[regional_kpi].[Region]" datasources="[regional_kpi].[Region]" />
+      </zone>
+      <zone h="200" id="7" is-spatial-root="true" r="800" x="400" y="700" w="400">
+        <filter column="[policy_level].[VehGas]" datasources="[policy_level].[VehGas]" />
+      </zone>
+      <zone h="200" id="8" is-spatial-root="true" r="1200" x="800" y="700" w="400">
+        <filter column="[policy_level].[DensityGroup]" datasources="[policy_level].[DensityGroup]" />
+      </zone>
+      <dashboard-actions>
+        <dashboard-action class="filter" name="Region Filter">
+          <source-sheets>Regional_Frequency_Bar, Regional_CostPerExposure_Bar, Highlight_Table</source-sheets>
+          <target-sheets>KPI_Cards, Highlight_Table</target-sheets>
+        </dashboard-action>
+      </dashboard-actions>
+    </dashboard>
+    <dashboard name="Page 2 - Claims &amp; Risk Segments">
+      <size maxheight="900" maxwidth="1200" minheight="900" minwidth="1200" />
+      <zone h="50" id="1" is-spatial-root="true" r="1200" x="0" y="0" w="1200">
+        <text val="CLAIMS &amp;amp; RISK SEGMENTS -- Driver, Vehicle &amp;amp; Region Patterns" />
+      </zone>
+      <zone h="280" id="2" is-spatial-root="true" r="400" x="0" y="50" w="400">
+        <worksheet name="Driver_Age_Frequency" />
+      </zone>
+      <zone h="280" id="3" is-spatial-root="true" r="800" x="400" y="50" w="400">
+        <worksheet name="Driver_Age_Severity" />
+      </zone>
+      <zone h="280" id="4" is-spatial-root="true" r="1200" x="800" y="50" w="400">
+        <worksheet name="Vehicle_Age_Frequency" />
+      </zone>
+      <zone h="400" id="5" is-spatial-root="true" r="1200" x="0" y="330" w="1200">
+        <worksheet name="Freq_vs_Severity_Scatter" />
+      </zone>
+      <zone h="170" id="6" is-spatial-root="true" r="1200" x="0" y="730" w="1200">
+        <worksheet name="Segment_Freq_vs_Sev" />
+      </zone>
+      <zone h="100" id="7" is-spatial-root="true" r="300" x="0" y="900" w="300">
+        <filter column="[segment_analysis].[SegmentType]" datasources="[segment_analysis].[SegmentType]" />
+      </zone>
+      <dashboard-actions>
+        <dashboard-action class="highlight" name="Region Highlight">
+          <source-sheets>Freq_vs_Severity_Scatter</source-sheets>
+          <target-sheets>Segment_Freq_vs_Sev</target-sheets>
+        </dashboard-action>
+      </dashboard-actions>
+    </dashboard>
+    <dashboard name="Page 3 - Claim Cost Concentration">
+      <size maxheight="900" maxwidth="1200" minheight="900" minwidth="1200" />
+      <zone h="50" id="1" is-spatial-root="true" r="1200" x="0" y="0" w="1200">
+        <text val="CLAIM COST CONCENTRATION &amp; BUSINESS RECOMMENDATIONS" />
+      </zone>
+      <zone h="350" id="2" is-spatial-root="true" r="800" x="0" y="50" w="800">
+        <worksheet name="Pareto_Chart" />
+      </zone>
+      <zone h="350" id="3" is-spatial-root="true" r="1200" x="800" y="50" w="400">
+        <worksheet name="Top_Claims_Table" />
+      </zone>
+      <zone h="180" id="4" is-spatial-root="true" r="1200" x="0" y="400" w="1200">
+        <worksheet name="Cost_Distribution_Region" />
+      </zone>
+      <zone h="320" id="5" is-spatial-root="true" r="1200" x="0" y="580" w="1200">
+        <text val="RECOMMENDATION 1: Target Underwriting Review in High-Cost Regions
+Champagne-Ardenne ranks #1 in both average severity (EUR 3,230) and cost per exposure year (EUR 399). Conduct focused underwriting review -- examine pricing adequacy.
+KPI: Monthly claim frequency and cost per exposure year by region.
+
+RECOMMENDATION 2: Strengthen Monitoring of Young Driver Segment
+Drivers aged 18-25 show claim frequency 0.175 (75% above avg) and severity EUR 4,692 (167% above avg). Implement enhanced monitoring; review bonus-malus and vehicle-power differentiation.
+KPI: Monthly frequency and severity for 18-25 group vs. portfolio average.
+
+RECOMMENDATION 3: Focus Claims Management on High-Cost Tail Claims
+Top 10% of individual claims account for 60% of total cost. Establish structured review for claims above the 95th percentile (~EUR 4,862).
+KPI: Monthly count and cost contribution of claims above 95th percentile." />
+      </zone>
+    </dashboard>
+  </dashboards>
+</workbook>
